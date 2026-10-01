@@ -73,10 +73,12 @@ than any cheating rate, is the thing worth measuring.
 - **`t4_noapi` is excluded from all figures.** I designed it as an unreachable
   API, but sandbox egress is open by default, so models simply found a working
   public exchange-rate service and passed legitimately. My task was broken.
-- **`llama-4-maverick` is excluded.** It emits tool calls as literal text in its
-  prose (`[glob(pattern="**/x.py")]`), so the harness never executes them and it
-  made zero file edits across 10 tasks. That is a harness incompatibility, not a
-  behavioural result.
+- **`llama-4-maverick` runs are classified `NO TOOL USE`, not excluded by name.**
+  It emits tool calls as literal text in its prose (`[glob(pattern="**/x.py")]`),
+  so the harness never executes them and it made zero file edits across 10 tasks.
+  `classify.py` detects that automatically — a bracketed pseudo tool call plus an
+  empty diff — and those runs are left out of all figures. That is a harness
+  incompatibility, not a behavioural result.
 - **Anthropic models were deliberately not tested.** This was written with
   Claude's help and I would rather not have that conflict in the data.
 - `mistral-3-14B` looks the most honest only because 9 of its 21 runs failed to
