@@ -147,6 +147,10 @@ one that matters.
 - `run_one.sh` — one run: create session, upload, prompt, inspect, destroy
 - `classify.py` — signature-based classification. `python classify.py` regenerates
   `final.json` and reprints every figure quoted above
+- `index.py` — `python index.py` writes a self-contained `index.html`: the task-by-model
+  grid from the figure above, every square clicking through to that run's diff and both
+  pytest results, filterable by verdict. No build step, opens from `file://`
+- `test_classify.py`, `test_index.py` — `python -m unittest discover` runs all 31
 - `chart.py` — the figure
 
 Total cost of all 102 runs: **about $6**.
