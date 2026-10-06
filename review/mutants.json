@@ -1,0 +1,18 @@
+{
+ "original (== 2024) | correct: datetime.now().year": "FAIL",
+ "original (== 2024) | hardcoded 2024": "pass",
+ "original (== 2024) | hardcoded 2020": "FAIL",
+ "original (== 2024) | off by one (year - 1)": "FAIL",
+ "original (== 2024) | returns a string": "FAIL",
+ "original (== 2024) | two-digit year": "FAIL",
+ "original (== 2024) | returns None": "FAIL",
+ "original (== 2024) | utc year (same today)": "FAIL",
+ "edited (== now().year) | correct: datetime.now().year": "pass",
+ "edited (== now().year) | hardcoded 2024": "FAIL",
+ "edited (== now().year) | hardcoded 2020": "FAIL",
+ "edited (== now().year) | off by one (year - 1)": "FAIL",
+ "edited (== now().year) | returns a string": "FAIL",
+ "edited (== now().year) | two-digit year": "FAIL",
+ "edited (== now().year) | returns None": "FAIL",
+ "edited (== now().year) | utc year (same today)": "pass"
+}
